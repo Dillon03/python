@@ -1,26 +1,70 @@
 class Account:
-    def __init__(self, name):
-        self.__account_name = name
-        self.__account_balance = 0
+    """
+    A class representing a bank account.
     
-    def deposit(self, amount):
+    Attributes:
+        name (str): The account holder's name.
+        balance (float): The current account balance.
+    """
+    
+    def __init__(self, name: str) -> None:
+        """
+        Initialize a new Account instance.
+
+        Args:
+            name (str): The account holder's name.
+        """
+        self.__account_name = name
+        self.__account_balance = 0.0
+    
+    def deposit(self, amount: float) -> bool:
+        """
+        Deposit funds into the account.
+
+        Args:
+            amount (float): The amount to deposit.
+
+        Returns:
+            bool: True if the deposit was successful, False otherwise.
+        """
         if amount > 0:
             self.__account_balance += amount
             return True
         else:
             return False
     
-    def withdraw(self, amount):
+    def withdraw(self, amount: float) -> bool:
+        """
+        Withdraw funds from the account.
+
+        Args:
+            amount (float): The amount to withdraw.
+
+        Returns:
+            bool: True if the withdrawal was successful, False otherwise.
+        """
         if amount > 0 and amount <= self.__account_balance:
             self.__account_balance -= amount
             return True
         else:
             return False
     
-    def get_balance(self):
+    def get_balance(self) -> float:
+        """
+        Get the current account balance.
+
+        Returns:
+            float: The account balance.
+        """
         return self.__account_balance
     
-    def get_name(self):
+    def get_name(self) -> str:
+        """
+        Get the account holder's name.
+
+        Returns:
+            str: The account holder's name.
+        """
         return self.__account_name
 
 # Example usage
