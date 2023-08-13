@@ -2,14 +2,14 @@ import pytest
 from account import Account
 
 
-def test_account_init():
+def test_init():
     # Test initialization of Account
     account = Account('John')
     assert account.get_name() == 'John'
     assert account.get_balance() == 0.0
 
 
-def test_account_deposit():
+def test_deposit():
     # Test deposit method
     account = Account('Alice')
 
@@ -23,7 +23,7 @@ def test_account_deposit():
     assert account.get_balance() == 100.0  # Balance should remain unchanged
 
 
-def test_account_withdraw():
+def test_withdraw():
     # Test withdraw method
     account = Account('Bob')
     account.deposit(200.0)
